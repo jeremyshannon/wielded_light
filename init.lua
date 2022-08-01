@@ -1,4 +1,8 @@
 local mod_name = minetest.get_current_modname()
+local modpath = minetest.get_modpath(mod_name)
+
+-- Declare namespace
+wielded_light = {}
 
 -- Node replacements that emit light
 -- Sets of lighting_node={ node=original_node, level=light_level }
@@ -657,3 +661,11 @@ wielded_light.register_lightable_node("default:river_water_source", nil, "river_
 
 ---TEST
 --wielded_light.register_item_light('default:dirt', 14)
+
+--Game specific defines
+minetest.register_on_mods_loaded(function()
+      if minetest.get_modpath("exile_env_sounds") then
+	 dofile(modpath.."/exile.lua")
+      end
+      --#TODO: Add Mesecraft
+end)
