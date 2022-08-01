@@ -379,6 +379,13 @@ function wielded_light.get_lighting_node(node_name)
 	return lighting_nodes[node_name]
 end
 
+-- Returns a table of the lit versions of a node, if it exists
+function wielded_light.get_lit_node_list(node_name)
+   if lightable_nodes[node_name] then
+      return lightable_nodes[node_name]
+   end
+end
+
 -- If this node is lit, return the unlit version
 function wielded_light.get_unlit_node(node)
    if lighting_nodes[node.name] then
