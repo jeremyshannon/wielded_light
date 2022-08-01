@@ -667,5 +667,7 @@ minetest.register_on_mods_loaded(function()
       if minetest.get_modpath("exile_env_sounds") then
 	 dofile(modpath.."/exile.lua")
       end
-      --#TODO: Add Mesecraft
+      if minetest.get_modpath("mesecraft_bones") then
+	 dofile(modpath.."/mesecraft.lua")
+      end
 end)
